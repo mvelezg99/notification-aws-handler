@@ -66,7 +66,7 @@ This project demonstrates a notification system using AWS SAM and TypeScript. Th
 
 **1. Clone the repository**
 ```bash
-git clone 
+git clone https://github.com/mvelezg99/notification-aws-handler.git
 cd source
 ```
 
