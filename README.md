@@ -8,6 +8,7 @@ A **TypeScript-based notification handler built with AWS SAM** that processes em
 - [Folder Structure](#-folder-structure)
 - [Prerequisites](#️-prerequisites)
 - [Quick Start](#-quick-start)
+- [Running Tests](#-running-tests)
 
 ***
 
@@ -48,13 +49,19 @@ This project demonstrates a notification system using AWS SAM and TypeScript. Th
 * **Node.js** (version 18 or higher)
 * **AWS CLI** installed and configured with your credentials
 * **AWS SAM CLI** installed
-* **TypeScript** installed globally (npm install -g typescript)
+* **Docker** installed and running (required for local testing with SAM)
+* **TypeScript** installed globally
 * **Amazon SES** setup:
   * A verified email in Amazon SES (sandbox or production mode).
 * **Amazon SNS** setup:
   * Ensure permissions to publish messages to an SNS topic.
 
 ### 🔑 Configuration Notes
+* **AWS CLI Configuration:**
+  * Ensure that your AWS CLI is configured with the necessary permissions.
+    ```bash
+    aws configure
+    ```
 * **Email Configuration:**
   * Update ``senderEmail`` in ``notification/email.ts`` with your verified SES email.
 * **SNS Permissions:**
@@ -116,5 +123,12 @@ Use a tool like Postman or cURL to test the Lambda function locally.
   "phoneNumber": "+1234567890",
   "message": "This is a test SMS."
 }
+```
+***
+
+## 🧪 Running Tests
+Run the unit tests using the following command:
+```bash
+npm run test
 ```
 
