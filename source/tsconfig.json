@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+      "target": "es2020",
+      "strict": true,
+      "preserveConstEnums": true,
+      "sourceMap": false,
+      "module": "CommonJS",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "outDir": "dist"
+  },
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "tests"]
+}

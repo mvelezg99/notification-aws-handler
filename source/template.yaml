@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  NotificationHandlerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: dist/handler.handler
+      Runtime: nodejs18.x
+      CodeUri: .
+      Timeout: 10
+      Events:
+        NotificationApi:
+          Type: Api
+          Properties:
+            Path: /notifications
+            Method: POST
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - SNSPublishMessagePolicy:
+            TopicName: "NotificationTopic"
+        - SESSendEmailPolicy
